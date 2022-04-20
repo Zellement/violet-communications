@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  min-height: 101%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @apply font-sans text-sm antialiased font-normal leading-normal xl:text-base;
+}
+
+.container {
+  @apply mx-auto max-w-screen-3xl;
+}
+
+a {
+  @apply transition duration-300;
+}
+
+[class*="transition"] {
+  @apply duration-300;
+}
+
+/* --------------------------
+Headings
+-------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply p-0 mb-6 font-bold leading-tight;
+}
+
+h1 {
+  @apply text-xl;
+}
+
+h2 {
+  @apply text-lg;
+}
+
+/* --------------------------
+Rows & Containers
+-------------------------- */
+
+.row {
+  @apply my-8 lg:my-16;
+}
+
+.container {
+  @apply mx-auto max-w-screen-2xl;
+}
+
+.block-padding {
+  @apply p-4 md:p-6 lg:p-8;
+}
+
+/* --------------------------
+Content
+-------------------------- */
+
+.content {
+  p {
+    @apply mb-6;
+  }
+}
+
+/* --------------------------
+Active Nav Item - Header
+-------------------------- */
+
+.primaryNav-item-is-active {
+  @apply underline;
+}

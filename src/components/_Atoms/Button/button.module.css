@@ -1,0 +1,6 @@
+.btn {
+  @apply inline-flex px-3 py-2;
+  &__red {
+    @apply bg-red-500;
+  }
+}
