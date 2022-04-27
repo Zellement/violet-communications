@@ -19,11 +19,11 @@ export default function Header() {
       `}
       render={(data) => (
         <>
-          <header className="fixed top-0 left-0 right-0 px-8 text-white bg-violet-600">
+          <header className="fixed top-0 left-0 right-0 z-50 px-8 text-white bg-violet-600">
             <div className="container ">
               <div className="flex items-center justify-between w-full">
                 <Link
-                  className="block w-40 p-4 -mb-8 text-lg bg-white shadow-xl lg:p-8 md:w-56 lg:ml-0 lg:shadow-none lg:w-72 lg:-mb-32"
+                  className="block w-40 p-4 -mb-8 text-lg bg-white shadow-xl lg:p-8 md:w-56 lg:ml-0 lg:shadow-none lg:w-72 lg:-mb-32 lg:-mt-12"
                   to="/"
                 >
                   <Logo />

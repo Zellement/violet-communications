@@ -1,10 +1,10 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { motion, AnimatePresence } from "framer-motion"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { motion, AnimatePresence } from "framer-motion";
 
-import Header from "./Header"
+import Header from "./Header";
 
-const duration = 0.35
+const duration = 0.35;
 
 const variants = {
   initial: {
@@ -24,10 +24,10 @@ const variants = {
       duration: duration,
     },
   },
-}
+};
 
 const Layout = (props) => {
-  const { children, location } = props || {}
+  const { children, location } = props || {};
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,7 +36,7 @@ const Layout = (props) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -53,7 +53,7 @@ const Layout = (props) => {
         </motion.main>
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

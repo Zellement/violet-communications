@@ -14,7 +14,7 @@ body {
   @apply font-sans text-sm antialiased font-normal leading-normal md:text-base;
   &:before {
     content: '';
-    @apply block w-full h-56 lg:h-80;
+    @apply block w-full h-[75px] md:h-[113px] lg:h-[120px];
   }
 }
 

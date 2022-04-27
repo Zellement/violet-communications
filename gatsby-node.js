@@ -44,21 +44,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   result.data.allDatoCmsParentPage.edges.forEach(({ node }) => {
     createPage({
       path: "/" + node.slug + "/",
-      component: require.resolve(`./src/templates/StandardPage.js`),
+      component: require.resolve(`./src/templates/ParentPage.js`),
       context: { slug: node.slug },
     });
   });
   result.data.allDatoCmsServicePage.edges.forEach(({ node }) => {
     createPage({
       path: "services/" + node.slug + "/",
-      component: require.resolve(`./src/templates/StandardPage.js`),
+      component: require.resolve(`./src/templates/ChildPageService.js`),
       context: { slug: node.slug },
     });
   });
   result.data.allDatoCmsArticle.edges.forEach(({ node }) => {
     createPage({
       path: "news/" + node.slug + "/",
-      component: require.resolve(`./src/templates/StandardPage.js`),
+      component: require.resolve(`./src/templates/SingleArticle.js`),
       context: { slug: node.slug },
     });
   });

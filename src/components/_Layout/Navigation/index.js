@@ -19,7 +19,7 @@ export default function Navigation(props) {
       >
         {primaryNavigation.map((navItem) => {
           return (
-            <li className="relative group">
+            <li key={navItem.url} className="relative group">
               <Link
                 className={`flex py-4 hover:lg:text-lime-500 ${styles.navigationLink}`}
                 onClick={() => {
@@ -35,7 +35,7 @@ export default function Navigation(props) {
                   <ul className="flex flex-col space-y-2 lg:space-y-6">
                     {navItem.children?.map((navItemChild) => {
                       return (
-                        <li className="flex">
+                        <li key={navItemChild.url} className="flex">
                           <Link
                             className="py-3 hover:lg:text-lime-500"
                             to={navItemChild.url}
