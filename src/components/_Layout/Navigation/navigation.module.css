@@ -1,0 +1,15 @@
+.navigation {
+}
+
+@screen lg {
+.navigation-link {
+  @apply relative;
+    &:after {
+      content: '';
+      @apply absolute w-full h-px transition-all duration-300 -translate-x-1/2 left-1/2 bg-violet-300 top-full;
+    }
+    &:hover:after {
+      @apply bg-lime-500;
+    }
+  }
+}

@@ -29,26 +29,24 @@ export default function Header() {
                   <Logo />
                 </Link>
 
-                <div className="flex flex-row items-center space-x-8">
+                <div className="flex flex-row items-center space-x-4 lg:space-x-12">
                   <Navigation
                     mobileNavOpen={mobileNavOpen}
                     setMobileNavOpen={setMobileNavOpen}
                     headerNav={true}
                   />
                   <Button
-                    className={`mr-20 lg:mr-0`}
                     tel={true}
                     url={data.datoCmsSiteOption.telephoneNumber}
+                  />
+                  <MobileNavButton
+                    mobileNavOpen={mobileNavOpen}
+                    setMobileNavOpen={setMobileNavOpen}
                   />
                 </div>
               </div>
             </div>
           </header>
-
-          <MobileNavButton
-            mobileNavOpen={mobileNavOpen}
-            setMobileNavOpen={setMobileNavOpen}
-          />
         </>
       )}
     />
