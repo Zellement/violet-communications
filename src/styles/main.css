@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply font-sans text-sm antialiased font-normal leading-normal xl:text-base;
+  @apply font-sans text-sm antialiased font-normal leading-normal md:text-base xl:text-lg;
 }
 
 .container {
@@ -26,6 +26,22 @@ a {
   @apply duration-300;
 }
 
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('../fonts/JosefinSans-SemiBold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 600;
+  font-style: semi-bold;
+}
+
 /* --------------------------
 Headings
 -------------------------- */
@@ -36,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply p-0 mb-6 font-bold leading-tight;
+  @apply p-0 mb-6 font-semibold leading-tight uppercase;
 }
 
 h1 {
@@ -78,5 +94,9 @@ Active Nav Item - Header
 -------------------------- */
 
 .primaryNav-item-is-active {
-  @apply underline;
+  @apply relative;
+    &:after {
+      content: '';
+      @apply w-1/3 h-px transform -translate-x-1/2 bg-white top-full left-1/2;
+  }
 }

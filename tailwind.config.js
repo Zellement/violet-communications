@@ -32,7 +32,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
+        sans: ["Josefin Sans", "sans-serif"],
       },
       zIndex: {
         "-10": "-10",
@@ -42,9 +42,24 @@ module.exports = {
         50: "50",
         60: "60",
       },
+      colors: {
+        violet: {
+          DEFAULT: "#7D55C7",
+          50: "#E7DFF4",
+          100: "#DBD0EF",
+          200: "#C3B1E5",
+          300: "#AC92DB",
+          400: "#9474D1",
+          500: "#7D55C7",
+          600: "#6138AB",
+          700: "#492B81",
+          800: "#311D57",
+          900: "#190F2D",
+        },
+      },
     },
   },
   corePlugins: {
     container: false,
   },
-}
+};
