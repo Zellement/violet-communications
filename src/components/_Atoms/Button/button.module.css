@@ -1,6 +1,6 @@
 .btn {
-  @apply inline-flex px-3 py-2;
-  &__red {
-    @apply bg-red-500;
+  @apply inline-flex px-5 py-3 pb-2 text-sm uppercase bg-lime-500 text-violet-500;
+  &--white {
+    @apply bg-white text-violet-500;
   }
 }

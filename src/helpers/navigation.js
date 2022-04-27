@@ -5,7 +5,7 @@ const primaryNavigation = [
   },
   {
     name: "About",
-    url: "/about/",
+    url: "/about-us/",
   },
   {
     name: "Services",
@@ -14,6 +14,22 @@ const primaryNavigation = [
       {
         name: "VOIP",
         url: "/services/voip/",
+      },
+      {
+        name: "Connectivity",
+        url: "/services/connectivity/",
+      },
+      {
+        name: "IT Solutions",
+        url: "/services/it-solutions/",
+      },
+      {
+        name: "Mobile",
+        url: "/services/mobile/",
+      },
+      {
+        name: "WiFi",
+        url: "/services/wifi/",
       },
       {
         name: "Fixed Lines",

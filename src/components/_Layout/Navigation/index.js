@@ -7,7 +7,7 @@ export default function Navigation(props) {
 
   return (
     <nav
-      className={`absolute uppercase p-8 bg-violet-600 inset-0 z-40 leading-none w-full transform h-full lg:translate-x-0 lg:w-auto lg:relative lg:h-auto lg:flex lg:content-end lg:justify-end lg:flex-col duration-300 ${
+      className={`absolute uppercase p-8 bg-violet-600 inset-0 z-40 leading-none w-full transform h-screen lg:translate-x-0 lg:w-auto lg:relative lg:h-auto lg:flex lg:content-end lg:justify-end lg:flex-col duration-300 ${
         mobileNavOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

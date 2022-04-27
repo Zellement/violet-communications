@@ -1,7 +1,8 @@
+require("dotenv").config();
 module.exports = {
   siteMetadata: {
-    title: `Gatsby & Tailwind Starter`,
-    description: `An opinionated starter for Gatsby v3 with TailwindCSS, PostCSS and Framer Motion page transitions.`,
+    title: `Violet Communications`,
+    description: `A dynamic approach to technology.`,
     author: `@zellement`,
   },
   plugins: [
@@ -14,6 +15,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -28,5 +30,11 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATOCMS,
+      },
+    },
   ],
-}
+};
