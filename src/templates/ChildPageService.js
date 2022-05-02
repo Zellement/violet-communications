@@ -7,7 +7,7 @@ import Form from "../components/Form";
 export default function ChildPageService({ data }) {
   const post = data.datoCmsServicePage;
   return (
-    <div>
+    <div className="flex flex-col space-y-16 lg:space-y-32">
       {post.pageBuilder.map((item) => {
         console.log(item);
         if (item.model.apiKey === "hero") {

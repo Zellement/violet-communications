@@ -9,7 +9,7 @@ export default function StandardPage({ data }) {
 
   const post = data.datoCmsParentPage;
   return (
-    <div>
+    <div className="flex flex-col space-y-16 lg:space-y-32">
       {post.pageBuilder.map((item) => {
         console.log(item);
         if (item.model.apiKey === "hero") {
