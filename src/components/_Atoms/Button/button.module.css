@@ -1,6 +1,6 @@
 .btn {
-  @apply inline-flex px-5 py-3 pb-2 text-sm uppercase bg-lime-500 text-violet-500 font-header;
+  @apply inline-flex px-5 py-3 pb-2 text-sm font-semibold uppercase bg-lime-500 text-violet-700 font-header hover:lg:bg-lime-300;
   &--white {
-    @apply bg-white text-violet-500;
+    @apply bg-white text-violet-500 hover:lg:bg-violet-50;
   }
 }

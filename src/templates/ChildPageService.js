@@ -62,7 +62,6 @@ export const query = graphql`
           copy
           buttons {
             displayText
-            link
           }
         }
         ... on DatoCmsForm {

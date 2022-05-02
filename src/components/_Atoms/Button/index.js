@@ -3,7 +3,14 @@ import React from "react";
 import * as styles from "./button.module.css";
 
 export default function Button(props) {
-  const { url, label, className, tel = false, style = "default" } = props || {};
+  const {
+    url,
+    label,
+    className,
+    colourModifier,
+    tel = false,
+    style = "default",
+  } = props || {};
 
   if (tel) {
     return (
@@ -18,7 +25,9 @@ export default function Button(props) {
   return (
     <Link
       to={url}
-      className={`${className}  ${styles.btn} ${styles["btn__red"]}`}
+      className={`${styles.btn} ${className} ${
+        colourModifier == "white" ? styles.btnWhite : ""
+      }`}
     >
       {label}
     </Link>
