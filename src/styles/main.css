@@ -110,7 +110,7 @@ Content
     @apply font-semibold;
   }
   ul {
-    @apply pl-0 mb-8;
+    @apply flex flex-col pl-0 mb-8 space-y-2;
     li {
       @apply relative pl-10;
         &:before {
@@ -118,7 +118,7 @@ Content
         border-bottom: 6px solid transparent;
         border-top: 6px solid transparent;
         border-left: 12px solid theme(colors.violet.500);
-        @apply absolute left-0 w-0 h-0 -translate-y-1/2 top-1/2;
+        @apply absolute top-0 left-0 w-0 h-0 mt-4;
       }
     }
   }
