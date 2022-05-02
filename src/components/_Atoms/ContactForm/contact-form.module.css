@@ -1,0 +1,9 @@
+.form {
+  @apply flex flex-col space-y-4;
+  input, textarea {
+    @apply w-full p-4 bg-violet-50 text-violet-900;
+  } 
+  textarea {
+    @apply w-full bg-violet-50 text-violet-900;
+  }
+}

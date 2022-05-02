@@ -32,7 +32,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Josefin Sans", "sans-serif"],
+        header: ["Josefin Sans", "sans-serif"],
+        sans: ["Roboto", "sans-serif"],
       },
       zIndex: {
         "-10": "-10",

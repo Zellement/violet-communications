@@ -3,12 +3,12 @@ import React from "react";
 
 function Hero({ data, title }) {
   const { subline, image } = data || {};
-  console.log(image);
   return (
-    <div className="relative py-32 overflow-hidden text-white bg-violet-500 md:py-40 lg:pt-48 xl:pt-64">
+    <div className="relative py-32 overflow-hidden text-white bg-violet-500 md:py-40 lg:pt-48 xl:pt-64 font-header">
       <GatsbyImage
         className="absolute inset-0 flex object-cover w-full h-full"
         image={image.gatsbyImageData}
+        alt={image.alt}
       />
       <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-violet-700 to-violet-500"></div>
       <div className="container px-8 2xl:px-0 ">

@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Hero from "../components/Hero";
 import MainContent from "../components/MainContent";
+import Form from "../components/Form";
 
 export default function StandardPage({ data }) {
   console.log(data);
@@ -15,10 +16,10 @@ export default function StandardPage({ data }) {
           return <Hero data={item} title={post.title} key={item.id} />;
         }
         if (item.model.apiKey === "main_content") {
-          return <MainContent key={item.id} />;
+          return <MainContent data={item} key={item.id} />;
         }
         if (item.model.apiKey === "form") {
-          return <Hero key={item.id} />;
+          return <Form key={item.id} />;
         }
       })}
     </div>
@@ -40,6 +41,7 @@ export const query = graphql`
           subline
           image {
             gatsbyImageData(placeholder: BLURRED)
+            alt
           }
         }
         ... on DatoCmsMainContent {
@@ -48,7 +50,8 @@ export const query = graphql`
             apiKey
           }
           supportingImage {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
+            alt
           }
           copy
           buttons {

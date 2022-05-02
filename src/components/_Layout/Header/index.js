@@ -19,7 +19,7 @@ export default function Header() {
       `}
       render={(data) => (
         <>
-          <header className="fixed top-0 left-0 right-0 z-50 px-8 text-white bg-violet-600">
+          <header className="fixed top-0 left-0 right-0 z-50 px-8 text-white bg-violet-600 font-header">
             <div className="container ">
               <div className="flex items-center justify-between w-full">
                 <Link

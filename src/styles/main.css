@@ -46,6 +46,14 @@ a {
   font-style: semi-bold;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: regular;
+}
+
 /* --------------------------
 Headings
 -------------------------- */
@@ -56,16 +64,13 @@ h3,
 h4,
 h5,
 h6 {
-  @apply p-0 mb-6 font-semibold leading-tight uppercase;
+  @apply p-0 mb-6 font-semibold leading-tight uppercase font-header;
 }
 
 h1 {
   @apply p-0 m-0 text-xl;
 }
 
-h2 {
-  @apply text-lg;
-}
 
 /* --------------------------
 Rows & Containers
@@ -88,8 +93,46 @@ Content
 -------------------------- */
 
 .content {
+  @apply text-gray-500;
   p {
-    @apply mb-6;
+    @apply mb-12;
+  }
+  h2, h3, h4, h5, h6 {
+    @apply text-violet-700;
+  }
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+  strong {
+    @apply font-semibold;
+  }
+  ul {
+    @apply pl-0 mb-8;
+    li {
+      @apply relative pl-10;
+        &:before {
+        content: '';
+        border-bottom: 6px solid transparent;
+        border-top: 6px solid transparent;
+        border-left: 12px solid theme(colors.violet.500);
+        @apply absolute left-0 w-0 h-0 -translate-y-1/2 top-1/2;
+      }
+    }
+  }
+  ol {
+    @apply pl-12 mb-8 list-decimal;
+  }
+  blockquote {
+    @apply pl-8 my-12 font-semibold border-l-8 border-lime-500;
+  }
+  a:not(.btn) {
+    @apply underline text-violet-700 hover:lg:text-lime-700;
+  }
+  &--form p {
+    @apply text-white;
   }
 }
 
