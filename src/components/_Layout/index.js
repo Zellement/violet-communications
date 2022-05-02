@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./Header";
+import Footer from "./Footer";
 
 const duration = 0.35;
 
@@ -51,6 +52,7 @@ const Layout = (props) => {
         >
           {children}
         </motion.main>
+        <Footer />
       </AnimatePresence>
     </>
   );
