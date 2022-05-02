@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-tailwind-starter",
+  "name": "violet-communcations",
   "private": false,
-  "description": "A simple starter to get up and developing quickly with Gatsby v4",
+  "description": "Violet Communications, built upon a simple starter to get up and developing quickly with Gatsby v4",
   "version": "0.1.0",
   "author": "Dan Farrow <dan@zellement>",
   "dependencies": {

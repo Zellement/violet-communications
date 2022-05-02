@@ -60,7 +60,7 @@ h6 {
 }
 
 h1 {
-  @apply text-xl;
+  @apply p-0 m-0 text-xl;
 }
 
 h2 {

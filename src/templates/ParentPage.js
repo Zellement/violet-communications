@@ -39,7 +39,7 @@ export const query = graphql`
           }
           subline
           image {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED)
           }
         }
         ... on DatoCmsMainContent {
