@@ -1,28 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Hero from "../components/Hero";
-import MainContent from "../components/MainContent";
-import Form from "../components/Form";
+import Seo from "../components/_Seo";
+import FlexibleContent from "../components/FlexibleContent";
 
 export default function StandardPage({ data }) {
-  console.log(data);
-
   const post = data.datoCmsParentPage;
   return (
-    <div className="flex flex-col space-y-16 lg:space-y-32">
-      {post.pageBuilder.map((item) => {
-        console.log(item);
-        if (item.model.apiKey === "hero") {
-          return <Hero data={item} title={post.title} key={item.id} />;
-        }
-        if (item.model.apiKey === "main_content") {
-          return <MainContent data={item} key={item.id} />;
-        }
-        if (item.model.apiKey === "form") {
-          return <Form key={item.id} />;
-        }
-      })}
-    </div>
+    <>
+      <Seo title={post.metaTitle} description={post.metaDescription} />
+      <FlexibleContent post={post} content={post.pageBuilder} />
+    </>
   );
 }
 
@@ -32,6 +19,8 @@ export const query = graphql`
       id
       title
       slug
+      metaDescription
+      metaTitle
       pageBuilder {
         ... on DatoCmsHero {
           id
