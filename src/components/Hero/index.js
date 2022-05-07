@@ -14,11 +14,13 @@ function Hero({ data, title, pageIcon }) {
           : "py-32 md:py-40 lg:pt-48 xl:pt-64"
       }`}
     >
-      <GatsbyImage
-        className="absolute inset-0 flex object-cover w-full h-full"
-        image={image.gatsbyImageData}
-        alt={image.alt}
-      />
+      <div className="absolute inset-0 flex">
+        <GatsbyImage
+          className="object-cover w-full h-full "
+          image={image.gatsbyImageData}
+          alt={image.alt}
+        />
+      </div>
       <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-violet-700 to-violet-500"></div>
 
       {pageIcon ? (
