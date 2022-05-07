@@ -13,7 +13,7 @@ export default function IndexPage({ data }) {
         title={post.title}
         primaryLine={post.primaryLine}
         secondaryLine={post.secondaryLine}
-        image={post.image}
+        image={post.featuredImage}
         list={post.list}
         buttons={post.buttons}
         tallHero={post.tallHero}
@@ -34,7 +34,7 @@ export const query = graphql`
       list {
         listItemText
       }
-      image {
+      featuredImage {
         gatsbyImageData(placeholder: BLURRED)
         alt
       }

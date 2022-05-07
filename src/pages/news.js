@@ -13,18 +13,19 @@ export default function NewsPage({ data }) {
       />
       <div className="container grid grid-cols-1 gap-8 mt-32 block-padding md:grid-cols-2 lg:grid-cols-3">
         {data.allDatoCmsArticle.edges.map((article) => {
+          console.log(article.node.featuredImage);
           return (
             <Link
               key={article.node.slug}
               to={`/news/${article.node.slug}/`}
               className="flex flex-col group bg-violet-50 hover:lg:bg-violet-500 hover:lg:text-white text-violet-800"
             >
-              {article.node.image ? (
+              {article.node.featuredImage ? (
                 <div className="h-[200px] overflow-hidden">
                   <GatsbyImage
                     className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
-                    image={article.node.image}
-                    alt={article.node.alt ?? "Violet Communications"}
+                    image={article.node.featuredImage.gatsbyImageData}
+                    alt={article.node.featuredImage.alt}
                   />
                 </div>
               ) : (
@@ -32,7 +33,11 @@ export default function NewsPage({ data }) {
               )}
               <div className="flex flex-col flex-grow p-8 ">
                 <div className="flex flex-col mt-auto">
-                  <h2 className="m-0">{article.node.title}</h2>
+                  <h2 className="m-0">
+                    {article.node.primaryLine
+                      ? article.node.primaryLine
+                      : article.node.title}
+                  </h2>
                 </div>
               </div>
             </Link>
@@ -50,12 +55,12 @@ export const query = graphql`
         node {
           title
           slug
-          image {
-            gatsbyImageData(aspectRatio: 1.5, width: 500)
-            alt
-          }
           secondaryLine
           primaryLine
+          featuredImage {
+            alt
+            gatsbyImageData
+          }
         }
       }
     }
