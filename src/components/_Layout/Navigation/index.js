@@ -26,12 +26,13 @@ export default function Navigation(props) {
                   setMobileNavOpen(false);
                 }}
                 activeClassName={"primaryNav-item-is-active"}
+                partiallyActive={navItem.url == "/" ? false : true}
                 to={navItem.url}
               >
                 {navItem.name}
               </Link>
               {navItem.children && headerNav ? (
-                <nav className="flex lg:bg-violet-600 lg:shadow-xl lg:p-8 flex-col pl-8 lg:pt-4 mt-4 text-sm transition duration-300 lg:m-0 lg:opacity-0 lg:pointer-events-none lg:absolute lg:left-0 lg:w-[250px] lg:group-hover:opacity-100 lg:top-full lg:group-hover:pointer-events-auto lg:hover:pointer-events-auto lg:hover:opacity-100">
+                <nav className="flex lg:bg-violet-600 lg:shadow-xl lg:p-8 flex-col pl-8 lg:pt-4 mt-4 text-sm transition duration-300 lg:m-0 lg:opacity-0 lg:pointer-events-none lg:absolute lg:left-0 lg:w-[250px] lg:group-hover:opacity-100 lg:top-full lg:mt-px lg:group-hover:pointer-events-auto lg:hover:pointer-events-auto lg:hover:opacity-100">
                   <ul className="flex flex-col space-y-2 lg:space-y-6">
                     {navItem.children?.map((navItemChild) => {
                       return (
