@@ -15,26 +15,21 @@ export default function NewsPage({ data }) {
         {data.allDatoCmsArticle.edges.map((article) => {
           return (
             <Link
+              key={article.node.slug}
               to={`/news/${article.node.slug}/`}
               className="flex flex-col group bg-violet-50 hover:lg:bg-violet-500 hover:lg:text-white text-violet-800"
             >
-              {article.node.pageBuilder?.map((content) => {
-                if (content.model?.apiKey == "hero" && content.image) {
-                  return (
-                    <div className="h-[200px] overflow-hidden">
-                      <GatsbyImage
-                        className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
-                        image={content.image.gatsbyImageData}
-                        alt={content.image.alt}
-                      />
-                    </div>
-                  );
-                } else {
-                  return (
-                    <Logo className="w-3/4 opacity-30 max-w-[150px] h-auto mx-auto my-8" />
-                  );
-                }
-              })}
+              {article.node.image ? (
+                <div className="h-[200px] overflow-hidden">
+                  <GatsbyImage
+                    className="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
+                    image={article.node.image}
+                    alt={article.node.alt ?? "Violet Communications"}
+                  />
+                </div>
+              ) : (
+                <Logo className="w-3/4 opacity-30 max-w-[150px] h-auto mx-auto my-8" />
+              )}
               <div className="flex flex-col flex-grow p-8 ">
                 <div className="flex flex-col mt-auto">
                   <h2 className="m-0">{article.node.title}</h2>
@@ -55,20 +50,12 @@ export const query = graphql`
         node {
           title
           slug
-          pageBuilder {
-            ... on DatoCmsHero {
-              model {
-                apiKey
-              }
-              id
-              image {
-                gatsbyImageData(aspectRatio: 1.5, width: 500)
-                title
-              }
-              subline
-              primaryLine
-            }
+          image {
+            gatsbyImageData(aspectRatio: 1.5, width: 500)
+            alt
           }
+          secondaryLine
+          primaryLine
         }
       }
     }

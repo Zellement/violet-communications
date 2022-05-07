@@ -2,12 +2,21 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/_Seo";
 import FlexibleContent from "../components/FlexibleContent";
+import Hero from "../components/Hero";
 
 export default function IndexPage({ data }) {
   const post = data.datoCmsHomepage;
   return (
     <>
       <Seo title={post.metaTitle} description={post.metaDescription} />
+      <Hero
+        secondaryLine={post.secondaryLine}
+        image={post.image}
+        tallHero={post.tallHero}
+        list={post.list}
+        primaryLine={post.primaryLine}
+        buttons={post.buttons}
+      />
       <FlexibleContent post={post} content={post.pageBuilder} />
     </>
   );
@@ -18,63 +27,58 @@ export const query = graphql`
     datoCmsHomepage {
       id
       title
-      slug
-      metaDescription
-      metaTitle
-      pageBuilder {
-        ... on DatoCmsHero {
-          id
-          model {
-            apiKey
+      secondaryLine
+      primaryLine
+      tallHero
+      list {
+        listItemText
+      }
+      image {
+        gatsbyImageData(placeholder: BLURRED)
+        alt
+      }
+      buttons {
+        displayText
+        link {
+          ... on DatoCmsArticle {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
           }
-          primaryLine
-          subline
-          tallHeader
-          list {
-            listItemText
+          ... on DatoCmsParentPage {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
           }
-          image {
-            gatsbyImageData(placeholder: BLURRED)
-            alt
+          ... on DatoCmsServicePage {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
           }
-          buttons {
-            displayText
-            link {
-              ... on DatoCmsArticle {
-                id
-                slug
-                title
-                model {
-                  apiKey
-                }
-              }
-              ... on DatoCmsParentPage {
-                id
-                slug
-                title
-                model {
-                  apiKey
-                }
-              }
-              ... on DatoCmsServicePage {
-                id
-                slug
-                title
-                model {
-                  apiKey
-                }
-              }
-              ... on DatoCmsHomepage {
-                id
-                title
-                slug
-                model {
-                  apiKey
-                }
-              }
+          ... on DatoCmsHomepage {
+            id
+            title
+            slug
+            model {
+              apiKey
             }
           }
         }
+      }
+
+      metaDescription
+      metaTitle
+      slug
+      pageBuilder {
         ... on DatoCmsMainContent {
           id
           model {

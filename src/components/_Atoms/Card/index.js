@@ -9,9 +9,9 @@ function Card(props) {
   const [url, setUrl] = useState();
 
   useEffect(() => {
-    if (card.model?.apiKey == "service_page") {
+    if (card.model?.apiKey === "service_page") {
       setUrl("services/");
-    } else if (card.model?.apiKey == "article") {
+    } else if (card.model?.apiKey === "article") {
       setUrl("news/");
     } else {
       setUrl("");

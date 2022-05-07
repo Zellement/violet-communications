@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { Link } from "gatsby";
 import Logo from "../../_Atoms/Logo";
 import primaryNavigation from "/src/helpers/navigation";
 

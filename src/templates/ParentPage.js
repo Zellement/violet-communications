@@ -2,12 +2,22 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/_Seo";
 import FlexibleContent from "../components/FlexibleContent";
+import Hero from "../components/Hero";
 
 export default function StandardPage({ data }) {
   const post = data.datoCmsParentPage;
   return (
     <>
       <Seo title={post.metaTitle} description={post.metaDescription} />
+      <Hero
+        title={post.title}
+        primaryLine={post.primaryLine}
+        secondaryLine={post.secondaryLine}
+        image={post.image}
+        list={post.list}
+        buttons={post.buttons}
+        tallHero={post.tallHero}
+      />
       <FlexibleContent post={post} content={post.pageBuilder} />
     </>
   );
@@ -18,21 +28,58 @@ export const query = graphql`
     datoCmsParentPage(slug: { eq: $slug }) {
       id
       title
-      slug
-      metaDescription
-      metaTitle
-      pageBuilder {
-        ... on DatoCmsHero {
-          id
-          model {
-            apiKey
+      secondaryLine
+      primaryLine
+      tallHero
+      list {
+        listItemText
+      }
+      image {
+        gatsbyImageData(placeholder: BLURRED)
+        alt
+      }
+      buttons {
+        displayText
+        link {
+          ... on DatoCmsArticle {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
           }
-          subline
-          image {
-            gatsbyImageData(placeholder: BLURRED)
-            alt
+          ... on DatoCmsParentPage {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
+          }
+          ... on DatoCmsServicePage {
+            id
+            slug
+            title
+            model {
+              apiKey
+            }
+          }
+          ... on DatoCmsHomepage {
+            id
+            title
+            slug
+            model {
+              apiKey
+            }
           }
         }
+      }
+
+      metaDescription
+      metaTitle
+      slug
+      pageBuilder {
         ... on DatoCmsMainContent {
           id
           model {
@@ -57,6 +104,9 @@ export const query = graphql`
               id
               slug
               title
+              model {
+                apiKey
+              }
             }
             ... on DatoCmsHomepage {
               id
@@ -73,6 +123,9 @@ export const query = graphql`
               slug
               title
               pageIcon
+              model {
+                apiKey
+              }
             }
           }
         }

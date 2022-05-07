@@ -26,7 +26,7 @@ export default function Button(props) {
     <Link
       to={url}
       className={`${styles.btn} ${className} ${
-        colourModifier == "white" ? styles.btnWhite : ""
+        colourModifier === "white" ? styles.btnWhite : ""
       }`}
     >
       {label}

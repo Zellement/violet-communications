@@ -11,7 +11,7 @@ function Hero({ data }) {
           <GatsbyImage
             className="object-cover w-full h-full "
             image={supportingImage.gatsbyImageData}
-            alt={supportingImage.alt}
+            alt={supportingImage.alt ?? "Violet Communications"}
           />
         </div>
         <div

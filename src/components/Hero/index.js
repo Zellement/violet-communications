@@ -4,12 +4,20 @@ import iconFinder from "../../helpers/iconFinder";
 import { BsCheck2 } from "react-icons/bs";
 import Button from "../_Atoms/Button";
 
-function Hero({ data, title, pageIcon }) {
-  const { subline, image, tallHeader, list, primaryLine, buttons } = data || {};
+function Hero({
+  secondaryLine,
+  image,
+  tallHero,
+  list,
+  primaryLine,
+  buttons,
+  title,
+  pageIcon,
+}) {
   return (
     <div
-      className={`relative overflow-hidden text-white bg-violet-500 font-header ${
-        tallHeader
+      className={`relative overflow-hidden text-white bg-violet-500 font-header mb-16 lg:mb-32 ${
+        tallHero
           ? "py-48 md:py-56 lg:py-80 xl:py-96"
           : "py-32 md:py-40 lg:pt-48 xl:pt-64"
       }`}
@@ -18,7 +26,7 @@ function Hero({ data, title, pageIcon }) {
         <GatsbyImage
           className="object-cover w-full h-full "
           image={image.gatsbyImageData}
-          alt={image.alt}
+          alt={image.alt ?? "Violet Communications"}
         />
       </div>
       <div className="absolute inset-0 opacity-60 bg-gradient-to-r from-violet-700 to-violet-500"></div>
@@ -33,7 +41,9 @@ function Hero({ data, title, pageIcon }) {
           <h1 className="flex flex-row items-center p-0 m-0 text-3xl leading-none md:text-5xl xl:text-7xl">
             <span>{primaryLine ? primaryLine : title}</span>
           </h1>
-          <p className="p-0 m-0 text-2xl leading-none xl:text-4xl">{subline}</p>
+          <p className="p-0 m-0 text-2xl leading-none xl:text-4xl">
+            {secondaryLine}
+          </p>
           {list ? (
             <ul className="flex flex-row flex-wrap gap-4 pt-8 lg:gap-8">
               {list.map((listItem) => {

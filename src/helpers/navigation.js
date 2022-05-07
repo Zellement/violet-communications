@@ -43,7 +43,7 @@ const primaryNavigation = [
   },
   {
     name: "Contact",
-    url: "/contact/",
+    url: "/contact-us/",
   },
 ];
 

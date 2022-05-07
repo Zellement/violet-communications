@@ -26,7 +26,7 @@ export default function Navigation(props) {
                   setMobileNavOpen(false);
                 }}
                 activeClassName={"primaryNav-item-is-active"}
-                partiallyActive={navItem.url == "/" ? false : true}
+                partiallyActive={navItem.url === "/" ? false : true}
                 to={navItem.url}
               >
                 {navItem.name}
