@@ -89,6 +89,41 @@ export const query = graphql`
             displayText
           }
         }
+        ... on DatoCmsCardBlock {
+          id
+          model {
+            apiKey
+          }
+          cards {
+            ... on DatoCmsArticle {
+              id
+              slug
+              title
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsHomepage {
+              id
+              slug
+              title
+            }
+            ... on DatoCmsParentPage {
+              id
+              slug
+              title
+            }
+            ... on DatoCmsServicePage {
+              id
+              slug
+              title
+              pageIcon
+              model {
+                apiKey
+              }
+            }
+          }
+        }
         ... on DatoCmsForm {
           id
           model {

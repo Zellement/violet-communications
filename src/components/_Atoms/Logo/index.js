@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function Logo() {
+export default function Logo(props) {
+  const { className } = props || {};
   return (
     <svg
-      className="w-full h-auto"
+      className={`w-full h-auto ${className}`}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlSpace="preserve"

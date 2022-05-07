@@ -54,6 +54,7 @@ function Hero({ data, title, pageIcon }) {
               {buttons.map((button, i) => {
                 return (
                   <Button
+                    key={button.link.slug}
                     colourModifier={i % 2 == 0 ? "white" : null}
                     url={button.link.slug}
                     label={button.displayText}

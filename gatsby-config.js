@@ -5,6 +5,7 @@ module.exports = {
     description: `A dynamic approach to technology.`,
     author: `@zellement`,
   },
+  trailingSlash: "always",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

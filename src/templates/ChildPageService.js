@@ -26,10 +26,81 @@ export const query = graphql`
           model {
             apiKey
           }
+          primaryLine
           subline
+          tallHeader
+          list {
+            listItemText
+          }
           image {
             gatsbyImageData(placeholder: BLURRED)
             alt
+          }
+          buttons {
+            displayText
+            link {
+              ... on DatoCmsArticle {
+                id
+                slug
+                title
+                model {
+                  apiKey
+                }
+              }
+              ... on DatoCmsParentPage {
+                id
+                slug
+                title
+                model {
+                  apiKey
+                }
+              }
+              ... on DatoCmsServicePage {
+                id
+                slug
+                title
+                model {
+                  apiKey
+                }
+              }
+              ... on DatoCmsHomepage {
+                id
+                title
+                slug
+                model {
+                  apiKey
+                }
+              }
+            }
+          }
+        }
+        ... on DatoCmsCardBlock {
+          id
+          model {
+            apiKey
+          }
+          cards {
+            ... on DatoCmsArticle {
+              id
+              slug
+              title
+            }
+            ... on DatoCmsHomepage {
+              id
+              slug
+              title
+            }
+            ... on DatoCmsParentPage {
+              id
+              slug
+              title
+            }
+            ... on DatoCmsServicePage {
+              id
+              slug
+              title
+              pageIcon
+            }
           }
         }
         ... on DatoCmsMainContent {
