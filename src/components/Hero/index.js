@@ -3,6 +3,8 @@ import React from "react";
 import iconFinder from "../../helpers/iconFinder";
 import { BsCheck2 } from "react-icons/bs";
 import Button from "../_Atoms/Button";
+import Email from "../_Atoms/ContactItems/email";
+import Telephone from "../_Atoms/ContactItems/telephone";
 
 function Hero({
   secondaryLine,
@@ -38,14 +40,20 @@ function Hero({
       ) : null}
       <div className="container px-8 2xl:px-0 ">
         <div className="relative flex flex-col space-y-2 uppercase">
-          <h1 className="flex flex-row items-center p-0 m-0 text-3xl leading-none md:text-5xl xl:text-7xl">
-            <span>{primaryLine ? primaryLine : title}</span>
+          <h1 className="flex flex-row items-center p-0 m-0 text-4xl leading-none animated fadeInDown md:text-5xl xl:text-7xl">
+            {primaryLine ? primaryLine : title}
           </h1>
-          <p className="p-0 m-0 text-2xl leading-none xl:text-4xl">
+          <p className="p-0 m-0 text-xl leading-none xl:text-4xl fadeInUp animated">
             {secondaryLine}
           </p>
+          {title === "Contact Us" ? (
+            <div className="flex flex-row flex-wrap gap-2 pt-8 font-sans text-base lowercase sm:gap-6 lg:gap-8">
+              <Email className="text-lime-200 hover:lg:text-lime-400" />
+              <Telephone className="text-lime-200 hover:lg:text-lime-400" />
+            </div>
+          ) : null}
           {list ? (
-            <ul className="flex flex-row flex-wrap gap-4 pt-8 lg:gap-8">
+            <ul className="flex flex-row flex-wrap gap-4 pt-8 animated--delay-750 fadeInDown animated lg:gap-8">
               {list.map((listItem) => {
                 return (
                   <li
@@ -60,7 +68,7 @@ function Hero({
             </ul>
           ) : null}
           {buttons ? (
-            <div className="flex flex-row flex-wrap gap-4 pt-8 lg:gap-8">
+            <div className="flex flex-row flex-wrap gap-4 pt-8 fadeInUp animated--delay-1000 animated lg:gap-8">
               {buttons.map((button, i) => {
                 return (
                   <Button

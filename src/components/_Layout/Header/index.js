@@ -23,7 +23,7 @@ export default function Header() {
             <div className="container ">
               <div className="flex items-center justify-between w-full">
                 <Link
-                  className="block w-40 p-4 -mb-8 text-lg bg-white shadow-xl lg:p-8 md:w-56 lg:ml-0 lg:shadow-none lg:w-72 lg:-mb-32 lg:-mt-12"
+                  className="block w-40 p-4 -mb-8 text-lg bg-white border-b shadow-xl border-violet-50 lg:p-8 md:w-56 lg:ml-0 lg:shadow-none lg:w-72 lg:-mb-32 lg:-mt-12"
                   to="/"
                 >
                   <Logo />

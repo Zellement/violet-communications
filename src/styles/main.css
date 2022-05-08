@@ -157,3 +157,124 @@ Active Nav Item - Header
   border-right: 10px solid transparent;
   border-top: 20px solid theme("colors.lime.500");
 }
+
+/* --------------------------
+Animations
+-------------------------- */
+
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.animated {
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
+}
+
+.animated--delay-500 {
+  animation-delay: 500ms;
+}
+
+.animated--delay-750 {
+  animation-delay: 750ms;
+}
+
+.animated--delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animated--delay-1500 {
+  animation-delay: 1500ms;
+}
+
+.animated--delay-1750 {
+  animation-delay: 750ms;
+}
+
+.animated--delay-2500 {
+  animation-delay: 2500ms;
+}
+
+.animated--delay-2750 {
+  animation-delay: 2750ms;
+}
