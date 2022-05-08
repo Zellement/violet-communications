@@ -4,6 +4,8 @@ import Logo from "../../_Atoms/Logo";
 import primaryNavigation from "/src/helpers/navigation";
 
 function Footer() {
+  const getDate = new Date();
+  const getYear = getDate.getFullYear();
   return (
     <div className="pt-16 my-16 border-t-2 border-gray-200 lg:my-32 font-header">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 text-center md:px-8 lg:text-left 2xl:px-0 lg:flex-row">
@@ -25,7 +27,7 @@ function Footer() {
             </ul>
           </nav>
           <div className="flex flex-col space-y-4 text-gray-500 uppercase text-[0.9em]">
-            <p>© 2022 Violet Communications - Privacy Policy - Cookie Policy</p>
+            <p>© {getYear} Violet Communications</p>
             <p>
               <a
                 href="https://www.zellement.com"

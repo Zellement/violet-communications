@@ -25,6 +25,7 @@
     "prop-types": "^15.8.1",
     "react": "^16.14.0",
     "react-animate-on-scroll": "^2.1.5",
+    "react-cookie-consent": "^7.4.1",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",

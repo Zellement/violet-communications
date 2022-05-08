@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { motion, AnimatePresence } from "framer-motion";
+import CookieConsent from "react-cookie-consent";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -54,6 +55,20 @@ const Layout = (props) => {
         </motion.main>
         <Footer />
       </AnimatePresence>
+      <CookieConsent
+        location="bottom"
+        buttonText="Okay, got it"
+        cookieName="gatsby-gdpr-google-analytics"
+        style={{ background: "#222222" }}
+        buttonStyle={{
+          color: "#222222",
+          backgroundColor: "#ffffff",
+          fontSize: "13px",
+        }}
+        expires={150}
+      >
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
     </>
   );
 };
