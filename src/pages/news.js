@@ -38,6 +38,9 @@ export default function NewsPage({ data }) {
                       ? article.node.primaryLine
                       : article.node.title}
                   </h2>
+                  <h3 className="mt-2 mb-0 text-sm opacity-50">
+                    {article.node.secondaryLine}
+                  </h3>
                 </div>
               </div>
             </Link>
