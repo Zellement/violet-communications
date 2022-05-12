@@ -95,6 +95,7 @@ export const query = graphql`
         }
         ... on DatoCmsCardBlock {
           id
+          cardHeader
           model {
             apiKey
           }

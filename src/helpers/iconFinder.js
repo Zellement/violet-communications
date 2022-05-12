@@ -4,7 +4,6 @@ import { FaNetworkWired, FaMobileAlt } from "react-icons/fa";
 import { BsGlobe } from "react-icons/bs";
 
 const iconFinder = (icon, className) => {
-  console.log(icon);
   switch (icon) {
     case "voip":
       return (

@@ -10,9 +10,9 @@ function Card(props) {
 
   useEffect(() => {
     if (card.model?.apiKey === "service_page") {
-      setUrl("services/");
+      setUrl("/services/");
     } else if (card.model?.apiKey === "article") {
-      setUrl("news/");
+      setUrl("/news/");
     } else {
       setUrl("");
     }

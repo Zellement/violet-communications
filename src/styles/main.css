@@ -109,6 +109,9 @@ Content
   strong {
     @apply font-semibold;
   }
+  img {
+    @apply inline-block p-2;
+  }
   ul {
     @apply flex flex-col pl-0 mb-8 space-y-2;
     li {

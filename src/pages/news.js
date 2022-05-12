@@ -12,8 +12,10 @@ export default function NewsPage({ data }) {
         description="Latest news from Violet Communications"
       />
       <div className="container grid grid-cols-1 gap-8 mt-32 block-padding md:grid-cols-2 lg:grid-cols-3">
+        <h1 className="text-2xl text-violet-500">News</h1>
+      </div>
+      <div className="container grid grid-cols-1 gap-8 block-padding md:grid-cols-2 lg:grid-cols-3">
         {data.allDatoCmsArticle.edges.map((article) => {
-          console.log(article.node.featuredImage);
           return (
             <Link
               key={article.node.slug}
