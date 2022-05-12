@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Logo from "../../_Atoms/Logo";
 import primaryNavigation from "/src/helpers/navigation";
+import Address from "../../_Atoms/Address";
 
 function Footer() {
   const getDate = new Date();
@@ -28,7 +29,8 @@ function Footer() {
           </nav>
           <div className="flex flex-col space-y-4 text-gray-500 uppercase text-[0.9em]">
             <p>© {getYear} Violet Communications</p>
-            <p>
+            <Address />
+            <p className="pt-8 text-xs">
               <a
                 href="https://www.zellement.com"
                 rel="noopener noreferrer"
