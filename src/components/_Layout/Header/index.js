@@ -4,6 +4,7 @@ import Navigation from "../Navigation";
 import MobileNavButton from "../Navigation/MobileNavButton";
 import Logo from "../../_Atoms/Logo";
 import Button from "../../_Atoms/Button";
+import Social from "../../_Atoms/Social";
 
 export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -39,6 +40,9 @@ export default function Header() {
                     tel={true}
                     url={data.datoCmsSiteOption.telephoneNumber}
                   />
+                  <ul className="flex-row items-center hidden gap-4 md:flex">
+                    <Social />
+                  </ul>
                   <MobileNavButton
                     mobileNavOpen={mobileNavOpen}
                     setMobileNavOpen={setMobileNavOpen}

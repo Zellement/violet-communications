@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import primaryNavigation from "/src/helpers/navigation";
 import * as styles from "./navigation.module.css";
+import Social from "../../_Atoms/Social";
 
 export default function Navigation(props) {
   const { mobileNavOpen, setMobileNavOpen, headerNav } = props || {};
@@ -52,6 +53,9 @@ export default function Navigation(props) {
             </li>
           );
         })}
+      </ul>
+      <ul className="flex flex-row items-center w-full gap-4 mt-16 lg:hidden">
+        <Social />
       </ul>
     </nav>
   );
