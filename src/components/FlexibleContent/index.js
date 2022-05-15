@@ -30,6 +30,7 @@ function FlexibleContent(props) {
         if (item.model.apiKey === "form") {
           return <Form key={item.id} />;
         }
+        return null;
       })}
     </div>
   );

@@ -73,7 +73,7 @@ function Hero({
                 return (
                   <Button
                     key={button.link.slug}
-                    colourModifier={i % 2 == 0 ? "white" : null}
+                    colourModifier={i % 2 === 0 ? "white" : null}
                     url={button.link.slug}
                     label={button.displayText}
                   />

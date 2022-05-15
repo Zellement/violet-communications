@@ -1,30 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import EmblaCarouselReact from "embla-carousel-react";
-// import { } from "framer-;
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
 } from "react-icons/io";
-
-// const duration = 0.1;
-
-// const container = {
-//   visible: {
-//     transition: {
-//       when: "beforeChildren",
-//       staggerChildren: 0.05,
-//       delayChildren: duration,
-//     },
-//   },
-// };
-// const item = {
-//   hidden: { y: 10, opacity: 0 },
-//   visible: {
-//     y: 0,
-//     opacity: 1,
-//   },
-// };
 
 class GalleryCarousel extends Component {
   constructor(props) {
