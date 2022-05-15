@@ -37,6 +37,14 @@ const Layout = (props) => {
           title
         }
       }
+      datoCmsSiteOption {
+        testimonials {
+          id
+          content
+          person
+          locationBusiness
+        }
+      }
     }
   `);
 
@@ -53,7 +61,7 @@ const Layout = (props) => {
         >
           {children}
         </motion.main>
-        <Footer />
+        <Footer testimonials={data.datoCmsSiteOption.testimonials} />
       </AnimatePresence>
       <CookieConsent
         location="bottom"

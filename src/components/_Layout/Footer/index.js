@@ -3,14 +3,17 @@ import { Link } from "gatsby";
 import Logo from "../../_Atoms/Logo";
 import primaryNavigation from "/src/helpers/navigation";
 import Address from "../../_Atoms/Address";
+import Testimonials from "../../_Atoms/Testimonials";
 import AssociatedCompanies from "../../_Atoms/AssociatedCompanies";
 import Social from "../../_Atoms/Social";
 
-function Footer() {
+function Footer(props) {
+  const { testimonials } = props || {};
   const getDate = new Date();
   const getYear = getDate.getFullYear();
   return (
     <>
+      <Testimonials content={testimonials} />
       <AssociatedCompanies />
       <div className="pt-16 my-16 border-t-2 border-gray-200 lg:my-32 font-header">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 text-center lg:justify-between md:px-8 lg:text-left 2xl:px-0 lg:flex-row">

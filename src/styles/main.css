@@ -281,3 +281,64 @@ Animations
 .animated--delay-2750 {
   animation-delay: 2750ms;
 }
+
+
+
+/* --------------------------
+Embla
+-------------------------- */
+
+.embla {
+  @apply w-full;
+}
+
+.embla__wrap {
+  @apply relative;
+}
+
+.embla__viewport {
+  @apply w-full overflow-hidden;
+}
+
+.embla__container {
+  @apply flex;
+}
+
+.embla__slide {
+  @apply relative flex-1;
+}
+
+.embla__slide--gallery {
+  flex: 0 0 100%;
+
+  /* @screen md {
+    flex: 0 0 50%;
+    padding-left: 0px;
+  }
+
+  @screen xl {
+    flex: 0 0 25%;
+    padding-left: 0px;
+  } */
+}
+
+.custom-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+0% {
+  transform: scale(0.85);
+  box-shadow: 0 0 0 0 theme("colors.transparent");
+}
+
+70% {
+  transform: scale(1);
+  box-shadow: 0 0 0 10px theme("colors.red.500");
+}
+
+100% {
+  transform: scale(0.85);
+  box-shadow: 0 0 0 0 theme("colors.transparent");
+}
+}
