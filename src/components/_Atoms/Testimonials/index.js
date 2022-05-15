@@ -102,7 +102,7 @@ class GalleryCarousel extends Component {
             </div>
           </section>
         ) : (
-          <p>Loading images&hellip;</p>
+          <p>Loading&hellip;</p>
         )}
       </>
     );
