@@ -6,7 +6,7 @@ function Social() {
     <>
       <li>
         <a
-          className="hover:lg:opacity-80"
+          className="block p-1.5 bg-white hover:lg:opacity-80 text-twitter-500"
           rel="noopener noreferrer"
           target="_blank"
           href="https://twitter.com/violetcomms"
@@ -17,7 +17,7 @@ function Social() {
       </li>
       <li>
         <a
-          className="hover:lg:opacity-80"
+          className="block p-1.5 bg-white hover:lg:opacity-80 text-instagram-pink-500"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.instagram.com/violetcommunications/"
@@ -28,7 +28,7 @@ function Social() {
       </li>
       <li>
         <a
-          className="hover:lg:opacity-80"
+          className="block p-1.5 bg-white hover:lg:opacity-80 text-facebook-500"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.facebook.com/Violet-Communications-100859312623714/"
