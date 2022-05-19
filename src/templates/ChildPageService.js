@@ -17,6 +17,7 @@ export default function IndexPage({ data }) {
         list={post.list}
         buttons={post.buttons}
         tallHero={post.tallHero}
+        pageIcon={post.pageIcon}
       />
       <FlexibleContent post={post} content={post.pageBuilder} />
     </>
@@ -31,6 +32,7 @@ export const query = graphql`
       secondaryLine
       primaryLine
       tallHero
+      pageIcon
       list {
         listItemText
       }

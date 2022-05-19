@@ -16,6 +16,7 @@ export default function IndexPage({ data }) {
         list={post.list}
         primaryLine={post.primaryLine}
         buttons={post.buttons}
+        pageIcon={post.pageIcon}
       />
       <FlexibleContent post={post} content={post.pageBuilder} />
     </>
