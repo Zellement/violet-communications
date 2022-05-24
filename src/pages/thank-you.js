@@ -3,11 +3,15 @@ import Seo from "../components/_Seo";
 
 const NotFoundPage = () => (
   <>
-    <Seo title="Error" description="Sorry, this page doesn't exist." />
+    <Seo
+      title="Thank you"
+      description="Thank you for getting in touch. We'll get right back to you."
+    />
     <div className="max-w-screen-md px-12 py-40 mx-auto">
-      <h1>Sorry!</h1>
+      <h1>Thank you</h1>
+      <p>Thank you for getting in touch. We'll get right back to you.</p>
       <p>
-        Sorry, this page doesn't exist. Please go to the{" "}
+        Please go to the{" "}
         <a className="underline" href="/">
           homepage
         </a>
