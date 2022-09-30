@@ -32,14 +32,14 @@ function Footer(props) {
                     </li>
                   );
                 })}
-                <li className="relative flex">
+                {/* <li className="relative flex">
                   <Link
                     className={`flex py-4 mx-auto hover:lg:text-lime-500 uppercase   font-semibold text-violet`}
                     to={`/terms-conditions/`}
                   >
                     Terms &amp; Conditions
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
             <div className="flex flex-col space-y-4 text-gray-500 uppercase text-[0.9em]">
