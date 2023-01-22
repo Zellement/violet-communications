@@ -1,11 +1,9 @@
-import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Logo from "../Logo";
 
 function Panel(props) {
   const { panel } = props || {};
-  console.log(panel);
 
   return (
     <div className="relative  flex flex-1  w-full min-w-[300px] border-t border-gray-300">
@@ -17,7 +15,11 @@ function Panel(props) {
           </h3>
           <div className="block w-16 h-auto text-lime-500">
             {panel.icon.format === "svg" ? (
-              <img className="w-full h-auto" src={panel.icon.url} />
+              <img
+                alt={panel.icon.alt ?? ""}
+                className="w-full h-auto"
+                src={panel.icon.url}
+              />
             ) : (
               <GatsbyImage
                 className="w-32 h-auto"

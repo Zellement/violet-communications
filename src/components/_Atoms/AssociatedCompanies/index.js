@@ -21,12 +21,12 @@ export default function AssociatedCompanies() {
             {data.datoCmsSiteOption.associatedCompaniesHeader}
           </h2>
           <div className="flex flex-row flex-wrap justify-center gap-8 lg:gap-16">
-            {data.datoCmsSiteOption.associatedCompanies.map((logo) => {
+            {data.datoCmsSiteOption.associatedCompanies.map((logo, index) => {
               return (
-                <div key={logo.alt} className="flex">
+                <div key={index} className="flex">
                   <GatsbyImage
                     className="block"
-                    alt={logo.alt}
+                    alt={logo.alt ?? ""}
                     image={logo.gatsbyImageData}
                   />
                 </div>

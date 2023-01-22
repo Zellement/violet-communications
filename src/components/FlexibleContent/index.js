@@ -12,7 +12,6 @@ function FlexibleContent(props) {
   return (
     <div className="flex flex-col space-y-16 lg:space-y-32">
       {content.map((item) => {
-        console.log(item.id);
         if (item.model.apiKey === "hero") {
           return (
             <Hero

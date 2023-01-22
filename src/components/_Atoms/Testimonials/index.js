@@ -30,7 +30,6 @@ class GalleryCarousel extends Component {
             <h2 className="px-4 mb-16 text-2xl text-center text-violet-500">
               Testimonials from happy clients
             </h2>
-            {/* {console.log(this.state. images)} */}
             <div className="relative max-w-screen-md mx-auto">
               <EmblaCarouselReact
                 emblaRef={(c) => (this.embla = c)}
