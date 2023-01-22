@@ -98,7 +98,7 @@ Content
     @apply mb-12;
   }
   h2, h3, h4, h5, h6 {
-    @apply text-violet-700;
+    @apply clear-both text-violet-700;
   }
   h2 {
     @apply text-xl md:text-2xl;
@@ -110,18 +110,15 @@ Content
     @apply font-semibold;
   }
   img {
-    @apply inline-block p-2;
+    @apply block mx-auto lg:float-left lg:mt-6 lg:mr-6 lg:ml-0;
   }
   ul {
     @apply flex flex-col pl-0 mb-8 space-y-2;
     li {
       @apply relative pl-10;
         &:before {
-        content: '';
-        border-bottom: 6px solid transparent;
-        border-top: 6px solid transparent;
-        border-left: 12px solid theme(colors.violet.500);
-        @apply absolute top-0 left-0 w-0 h-0 mt-4;
+        content: url('../assets/svgs/check.svg');
+        @apply absolute top-0 left-0 w-6 h-6 mt-px;
       }
     }
   }

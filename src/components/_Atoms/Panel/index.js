@@ -8,7 +8,7 @@ function Panel(props) {
   console.log(panel);
 
   return (
-    <div className="relative -mx-1 flex flex-1 flex-grow w-full min-w-[300px] border-t border-gray-300">
+    <div className="relative  flex flex-1  w-full min-w-[300px] border-t border-gray-300">
       <div className="relative flex flex-col w-full px-8 py-16 overflow-hidden text-center shadow-xl place-content-start">
         <Logo className="absolute left-0 w-[500px] opacity-5 lg:opacity-10 -translate-y-1/3 -translate-x-[200px] top-1/2 " />
         <div className="relative flex flex-col items-center flex-grow gap-8 mb-auto">
