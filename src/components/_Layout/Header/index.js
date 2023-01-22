@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Navigation from "../Navigation";
 import MobileNavButton from "../Navigation/MobileNavButton";
@@ -8,6 +8,7 @@ import Social from "../../_Atoms/Social";
 
 export default function Header() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   return (
     <StaticQuery
@@ -24,7 +25,8 @@ export default function Header() {
             <div className="container ">
               <div className="flex items-center justify-between w-full">
                 <Link
-                  className="block w-40 p-4 -mb-8 text-lg bg-white border-b shadow-xl border-violet-50 lg:p-8 md:w-56 lg:ml-0 lg:shadow-none lg:w-72 lg:-mb-32 lg:-mt-12"
+                  className={`block w-40 p-4 -mb-8 text-lg bg-white transition-all duration-300 border-b shadow-xl border-violet-50 lg:p-8 md:w-56 lg:ml-0 lg:shadow-none  lg:-mb-32 lg:-mt-12
+                  ${scrollDirection === "down" ? "lg:w-48" : "lg:w-72"}`}
                   to="/"
                 >
                   <Logo />
@@ -35,6 +37,7 @@ export default function Header() {
                     mobileNavOpen={mobileNavOpen}
                     setMobileNavOpen={setMobileNavOpen}
                     headerNav={true}
+                    scrollDirection={scrollDirection}
                   />
                   <Button
                     tel={true}
@@ -55,4 +58,30 @@ export default function Header() {
       )}
     />
   );
+}
+
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState(null);
+
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? "down" : "up";
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    };
+  }, [scrollDirection]);
+
+  return scrollDirection;
 }
