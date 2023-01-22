@@ -33,6 +33,7 @@ function MainContent({ data }) {
             ></div>
           </ScrollAnimation>
         </div>
+        <div class="clear-both"></div>
       </div>
     </ScrollAnimation>
   );
