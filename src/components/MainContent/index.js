@@ -6,7 +6,7 @@ function MainContent({ data }) {
   const { copy, supportingImage, showImage } = data || {};
 
   return (
-    <ScrollAnimation animateIn="fadeInRight" animateOnce={true} offset={20}>
+    <ScrollAnimation animateIn="fadeInRight" animateOnce={true} offset={50}>
       <div className="my-16 lg:my-32">
         <div className="container relative flex flex-col w-full p-8 bg-violet-700 lg:flex-row lg:p-16 xl:p-32">
           {showImage ? (
@@ -22,6 +22,7 @@ function MainContent({ data }) {
             animateIn="fadeInLeft"
             delay={500}
             animateOnce={true}
+            offset={50}
             className={showImage ? "" : `mx-auto`}
           >
             <div

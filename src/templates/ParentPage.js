@@ -131,6 +131,23 @@ export const query = graphql`
             }
           }
         }
+        ... on DatoCmsPanelBlock {
+          id
+          title
+          panels {
+            title
+            id
+            icon {
+              gatsbyImageData
+              format
+              url
+            }
+            content
+          }
+          model {
+            apiKey
+          }
+        }
         ... on DatoCmsCardBlock {
           id
           cardHeader
