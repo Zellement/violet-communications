@@ -36,7 +36,6 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS,
-        environment: `amends-2023`,
       },
     },
   ],
