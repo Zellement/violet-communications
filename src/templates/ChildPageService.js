@@ -87,6 +87,7 @@ export const query = graphql`
           model {
             apiKey
           }
+          showImage
           supportingImage {
             gatsbyImageData(placeholder: BLURRED)
             alt
@@ -94,6 +95,58 @@ export const query = graphql`
           copy
           buttons {
             displayText
+          }
+        }
+        ... on DatoCmsStatement {
+          id
+          model {
+            apiKey
+          }
+          image {
+            gatsbyImageData
+          }
+          linkText
+          title
+          content
+          linkTo {
+            ... on DatoCmsArticle {
+              id
+              slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsParentPage {
+              id
+              slug
+              model {
+                apiKey
+              }
+            }
+            ... on DatoCmsServicePage {
+              id
+              slug
+              model {
+                apiKey
+              }
+            }
+          }
+        }
+        ... on DatoCmsPanelBlock {
+          id
+          title
+          panels {
+            title
+            id
+            icon {
+              gatsbyImageData
+              format
+              url
+            }
+            content
+          }
+          model {
+            apiKey
           }
         }
         ... on DatoCmsCardBlock {

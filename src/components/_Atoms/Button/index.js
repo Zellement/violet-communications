@@ -7,21 +7,13 @@ export default function Button(props) {
 
   if (tel) {
     return (
-      <a
-        className={`${className} ${styles.btn} ${styles.btnWhite}`}
-        href={`tel:${url}`}
-      >
+      <a className={`${styles.btn} ${className ?? ""}`} href={`tel:${url}`}>
         {url}
       </a>
     );
   }
   return (
-    <Link
-      to={url}
-      className={`${styles.btn} ${className} ${
-        colourModifier === "white" ? styles.btnWhite : ""
-      }`}
-    >
+    <Link to={url} className={`${styles.btn} ${className ?? ""}`}>
       {label}
     </Link>
   );

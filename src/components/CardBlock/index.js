@@ -13,7 +13,7 @@ function CardBlock(props) {
             {data.cardHeader}
           </h2>
         ) : null}
-        <div className="grid w-full grid-cols-1 gap-8 px-8 text-black 2xs:grid-cols-2 lg:grid-cols-3 lg:gap-16 ">
+        <div className="grid w-full grid-cols-1 gap-8 px-8 text-black 2xs:grid-cols-2 lg:grid-cols-4 lg:gap-16 ">
           {data?.cards?.map((card) => {
             return <Card key={card.id} card={card} />;
           })}

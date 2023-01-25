@@ -5,13 +5,15 @@ import * as styles from "./navigation.module.css";
 import Social from "../../_Atoms/Social";
 
 export default function Navigation(props) {
-  const { mobileNavOpen, setMobileNavOpen, headerNav } = props || {};
+  const { mobileNavOpen, setMobileNavOpen, headerNav, scrollDirection } =
+    props || {};
 
   return (
     <nav
       className={`absolute uppercase p-8 md:p-16 bg-violet-600 inset-0 z-40 leading-none w-full transform h-screen lg:translate-x-0 lg:w-auto lg:relative lg:h-auto lg:flex lg:content-end lg:justify-end lg:flex-col duration-300 lg:px-0 ${
         mobileNavOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      }
+      ${scrollDirection === "down" ? "lg:py-4" : "lg:py-16"}`}
     >
       <ul
         className={
@@ -22,7 +24,11 @@ export default function Navigation(props) {
           return (
             <li key={navItem.url} className="relative group">
               <Link
-                className={`flex py-4 hover:lg:text-lime-500 ${styles.navigationLink}`}
+                className={`flex py-4 hover:lg:text-lime-500 ${
+                  styles.navigationLink
+                } ${
+                  scrollDirection === "down" ? styles.navigationLinkShrink : ""
+                }`}
                 onClick={() => {
                   setMobileNavOpen(false);
                 }}

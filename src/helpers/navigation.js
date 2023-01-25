@@ -20,20 +20,12 @@ const primaryNavigation = [
         url: "/services/connectivity/",
       },
       {
-        name: "IT Solutions",
-        url: "/services/it-solutions/",
-      },
-      {
         name: "Mobile",
         url: "/services/mobile/",
       },
       {
         name: "WiFi",
         url: "/services/wifi/",
-      },
-      {
-        name: "Fixed Lines",
-        url: "/services/fixed-lines/",
       },
     ],
   },
